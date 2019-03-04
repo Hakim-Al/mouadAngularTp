@@ -1,0 +1,24 @@
+<div class="col-md-8 col-md-offset-2"> 
+  <div class="pull-right">
+      Rechercher :
+    <input type="text" [(ngModel)]="prod">
+  </div>
+  <table class="table">
+    <thead>
+      <tr class="pointer">
+        <th><a (click)="sort('nom')">Nom</a></th>
+        <th><a (click)="sort('descr')">Description</a></th>
+        <th><a (click)="sort('prix')">Prix</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of getElements(prod)">
+        <td>{{p.nom}}</td>
+        <td>{{p.description}}</td>
+        <td appPrice price={{p.prix}}>{{p.prix}}</td>
+      </tr>
+      
+    </tbody>
+
+  </table>
+</div>

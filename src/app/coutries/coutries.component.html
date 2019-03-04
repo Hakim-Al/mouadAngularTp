@@ -1,0 +1,34 @@
+<div class="col-md-8 col-md-offset-2"> 
+ 
+  <div class="pull-right">
+      <input type="text"  [(ngModel)]="country">
+      
+      <button type="button" class="btn btn-success" (click)="search(country)">Search</button>
+      
+  </div>
+  <table class="table">
+    <thead>
+      <tr class="pointer">
+        <th><a>Capital</a></th>
+        <th><a>Flag</a></th>
+        <th><a>Name</a></th>
+        <th><a>Population</a></th>
+        <th><a>Region</a></th>
+        <th><a>Details</a></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of countries">
+        <td>{{c.capital}}</td>
+        <td><img src="{{c.flag}}" style="width:20px;height:20px;"></td>
+        <td>{{c.name}}</td>
+        <td>{{c.population}}</td>
+        <td>{{c.region}}</td>
+        <td><a [routerLink]="['country',c]" style="cursor:pointer;">details</a></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
